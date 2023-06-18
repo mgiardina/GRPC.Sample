@@ -1,0 +1,21 @@
+syntax = "proto3";
+
+option csharp_namespace = "GrpcServer";
+
+package myHub;
+
+// The hub service definition.
+service Hub {
+  // Sends a message
+  rpc Send (MessageRequest) returns (MessageResponse);
+}
+
+// The request message.
+message MessageRequest {
+  string input = 1;
+}
+
+// The response message.
+message MessageResponse {
+  string output = 1;
+}
